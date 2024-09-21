@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+
+    <!-- Inline CSS for styling -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+            font-size: 1.2em;
+        }
+        .input-box {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #color-btn {
+            margin-top: 30px;
+            background-color: #007bff;
+        }
+        #color-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to EIT!</h1>
+        <p id="welcome-message">Exceptional goals require exceptional efforts.</p>
+        
+        <div class="input-box">
+            <input type="text" id="name-input" placeholder="Your Name" />
+            <button onclick="displayGreeting()">Submit</button>
+        </div>
+        
+        <div class="input-box">
+            <button id="color-btn" onclick="changeBackgroundColor()">Change Background Color</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Function to display personalized greeting
+        function displayGreeting() {
+            const name = document.getElementById('name-input').value;
+            const messageElement = document.getElementById('welcome-message');
+            
+            if (name.trim() !== "") {
+                messageElement.innerHTML = "Hello, " + name + "! Welcome to the page.";
+            } else {
+                messageElement.innerHTML = "Please enter a valid name.";
+            }
+        }
+
+        // Function to change the background color
+        function changeBackgroundColor() {
+            const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#FFBD33'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+
+</body>
+</html>
